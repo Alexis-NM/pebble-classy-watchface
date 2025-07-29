@@ -6,3 +6,5 @@
 // DO NOT MODIFY - CHANGES WILL BE OVERWRITTEN
 //
 
+extern uint32_t MESSAGE_KEY_InvertColors;
+extern uint32_t MESSAGE_KEY_SecondTick;

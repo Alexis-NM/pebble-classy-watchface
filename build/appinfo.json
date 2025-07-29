@@ -9,6 +9,13 @@
         "chalk",
         "diorite"
     ],
+    "capabilities": [
+        "configurable"
+    ],
+    "messageKeys": {
+        "SecondTick": 10000,
+        "InvertColors": 10001
+    },
     "watchapp": {
         "watchface": true
     },
@@ -17,12 +24,18 @@
             {
                 "type": "png",
                 "name": "IMAGE_MENU_ICON",
-                "file": "images/classy_logo.png"
+                "file": "images/classy_logo.png",
+                "menuIcon": true
             },
             {
                 "type": "png",
                 "name": "IMAGE_BACKGROUND",
                 "file": "images/classy_background.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_BACKGROUND_INVERTED",
+                "file": "images/classy_background_inverted.png"
             },
             {
                 "type": "font",
@@ -36,7 +49,8 @@
     "longName": "Classy",
     "versionLabel": "1.0",
     "companyName": "Nono_a",
-    "messageKeys": {},
-    "appKeys": {},
-    "capabilities": []
+    "appKeys": {
+        "SecondTick": 10000,
+        "InvertColors": 10001
+    }
 }

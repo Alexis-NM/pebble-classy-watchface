@@ -2,11 +2,7 @@
   "name": "classy",
   "author": "Nono_a",
   "version": "1.0.0",
-  "keywords": [
-    "pebble-app"
-  ],
   "private": true,
-  "dependencies": {},
   "pebble": {
     "displayName": "Classy",
     "uuid": "7a44a9a8-e5b1-479e-8385-48d631492bbc",
@@ -18,6 +14,13 @@
       "chalk",
       "diorite"
     ],
+    "capabilities": [
+      "configurable"
+    ],
+    "messageKeys": [
+      "SecondTick",
+      "InvertColors"
+    ],
     "watchapp": {
       "watchface": true
     },
@@ -26,12 +29,18 @@
         {
           "type": "png",
           "name": "IMAGE_MENU_ICON",
-          "file": "images/classy_logo.png"
+          "file": "images/classy_logo.png",
+          "menuIcon": true
         },
         {
           "type": "png",
           "name": "IMAGE_BACKGROUND",
           "file": "images/classy_background.png"
+        },
+        {
+          "type": "png",
+          "name": "IMAGE_BACKGROUND_INVERTED",
+          "file": "images/classy_background_inverted.png"
         },
         {
           "type": "font",
@@ -40,5 +49,8 @@
         }
       ]
     }
+  },
+  "dependencies": {
+    "pebble-clay": "^1.0.4"
   }
 }
