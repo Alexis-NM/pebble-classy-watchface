@@ -1,0 +1,42 @@
+{
+    "displayName": "Classy",
+    "uuid": "7a44a9a8-e5b1-479e-8385-48d631492bbc",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": [
+        "aplite",
+        "basalt",
+        "chalk",
+        "diorite"
+    ],
+    "watchapp": {
+        "watchface": true
+    },
+    "resources": {
+        "media": [
+            {
+                "type": "png",
+                "name": "IMAGE_MENU_ICON",
+                "file": "images/classy_logo.png"
+            },
+            {
+                "type": "png",
+                "name": "IMAGE_BACKGROUND",
+                "file": "images/classy_background.png"
+            },
+            {
+                "type": "font",
+                "name": "FONT_ROBOTO_THIN_11",
+                "file": "fonts/Roboto-Regular.ttf"
+            }
+        ]
+    },
+    "name": "classy",
+    "shortName": "Classy",
+    "longName": "Classy",
+    "versionLabel": "1.0",
+    "companyName": "Nono_a",
+    "messageKeys": {},
+    "appKeys": {},
+    "capabilities": []
+}
