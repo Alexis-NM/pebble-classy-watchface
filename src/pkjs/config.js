@@ -1,7 +1,7 @@
 module.exports = [
   {
     type: "heading",
-    defaultValue: "Réglages Classy",
+    defaultValue: "Classy Settings",
   },
   {
     type: "section",
@@ -9,19 +9,19 @@ module.exports = [
       {
         type: "toggle",
         messageKey: "SecondTick",
-        label: "Afficher les secondes",
+        label: "Show seconds",
         defaultValue: true,
       },
       {
         type: "toggle",
         messageKey: "InvertColors",
-        label: "Inverser les couleurs",
+        label: "Invert colors",
         defaultValue: false,
       },
     ],
   },
   {
     type: "submit",
-    defaultValue: "Enregistrer",
+    defaultValue: "Save",
   },
 ];

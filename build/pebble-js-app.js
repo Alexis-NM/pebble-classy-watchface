@@ -78,13 +78,12 @@
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	// src/pkjs/index.js
-	var Clay = __webpack_require__(3);
-	var clayConfig = __webpack_require__(6);
-	var clay = new Clay(clayConfig);
+	const Clay = __webpack_require__(3);
+	const clayConfig = __webpack_require__(6);
+	const clay = new Clay(clayConfig);
 	
 	clay.on("webviewclosed", function (e) {
-	  console.log("Page de config fermée");
+	  console.log("Config page closed");
 	});
 
 
@@ -134,7 +133,7 @@
 	module.exports = [
 	  {
 	    type: "heading",
-	    defaultValue: "Réglages Classy",
+	    defaultValue: "Classy Settings",
 	  },
 	  {
 	    type: "section",
@@ -142,20 +141,20 @@
 	      {
 	        type: "toggle",
 	        messageKey: "SecondTick",
-	        label: "Afficher les secondes",
+	        label: "Show seconds",
 	        defaultValue: true,
 	      },
 	      {
 	        type: "toggle",
 	        messageKey: "InvertColors",
-	        label: "Inverser les couleurs",
+	        label: "Invert colors",
 	        defaultValue: false,
 	      },
 	    ],
 	  },
 	  {
 	    type: "submit",
-	    defaultValue: "Enregistrer",
+	    defaultValue: "Save",
 	  },
 	];
 
