@@ -2,9 +2,6 @@
 
 #define DISPLAY_SECONDS        true
 #define DISPLAY_TIME           false
-#define HOUR_VIBRATION         true
-#define HOUR_VIBRATION_START   8
-#define HOUR_VIBRATION_END     20
 
 static Window      *s_window;
 static Layer       *s_second_layer;
@@ -84,11 +81,11 @@ static void center_layer_update(Layer *layer, GContext *ctx) {
   GRect bounds = layer_get_bounds(layer);
   GPoint c = grect_center_point(&bounds);
 
-  // 1) Cercle plein blanc (rayon = 3px)
+  // 1) Cercle plein blanc (rayon = 2px)
   graphics_context_set_fill_color(ctx, GColorWhite);
   graphics_fill_circle(ctx, c, 2);
 
-  // 2) Cercle plein noir (rayon = 2px)
+  // 2) Cercle plein noir (rayon = 1px)
   graphics_context_set_fill_color(ctx, GColorBlack);
   graphics_fill_circle(ctx, c, 1);
 }
@@ -100,11 +97,8 @@ static void minute_layer_update(Layer *layer, GContext *ctx) {
   int32_t angle = TRIG_MAX_ANGLE * t->tm_min / 60;
   gpath_rotate_to(s_minute_path, angle);
 
-  // Remplissage noir
   graphics_context_set_fill_color(ctx, GColorBlack);
   gpath_draw_filled(ctx, s_minute_path);
-
-  // Contour blanc supprimé
 }
 
 // Aiguille des heures (solide noir, sans contour)
@@ -114,11 +108,8 @@ static void hour_layer_update(Layer *layer, GContext *ctx) {
   int32_t angle = TRIG_MAX_ANGLE * (t->tm_hour * 60 + t->tm_min) / 720;
   gpath_rotate_to(s_hour_path, angle);
 
-  // Remplissage noir
   graphics_context_set_fill_color(ctx, GColorBlack);
   gpath_draw_filled(ctx, s_hour_path);
-
-  // Contour blanc supprimé
 }
 
 // Gestion des ticks
@@ -133,11 +124,6 @@ static void tick_handler(struct tm *t, TimeUnits units) {
     update_weekday();
 #if DISPLAY_TIME
     update_time_text();
-#endif
-#if HOUR_VIBRATION
-    if (t->tm_min == 0 && t->tm_hour >= HOUR_VIBRATION_START && t->tm_hour <= HOUR_VIBRATION_END) {
-      vibes_double_pulse();
-    }
 #endif
   }
 }
